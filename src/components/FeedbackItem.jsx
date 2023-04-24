@@ -1,12 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function FeedbackItem() {
+import Card from "./share/Card";
+function FeedbackItem({ item }) {
   return (
-    <div className="card">
-      <div className="num-display">10</div>
-      <div className="text-display">This is an example</div>
-    </div>
+    <Card>
+      <div className="num-display">{item.rating}</div>
+      <div className="text-display">{item.text}</div>
+    </Card>
   );
 }
+
+FeedbackItem.propTypes = {
+  item: PropTypes.object.isRequired,
+};
 
 export default FeedbackItem;
